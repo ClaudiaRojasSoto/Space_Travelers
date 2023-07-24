@@ -4,10 +4,10 @@ import '../styles/myProfile.css';
 const MyProfile = () => (
   <section className="myProfile">
     <div>
-      <h3>Rockets</h3>
+      <h3>My Missions</h3>
     </div>
     <div>
-      <h3>Missions</h3>
+      <h3>My Rockets</h3>
     </div>
   </section>
 );

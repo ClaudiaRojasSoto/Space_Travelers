@@ -2,9 +2,8 @@
   margin: 1rem 4rem 2rem 4rem;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 2rem; 
+  padding-bottom: 2rem;
   border-bottom: 1px solid;
-  
 }
 
 .header h1 {
@@ -46,6 +45,6 @@ a {
 
 .active {
   text-decoration: underline;
-  color:rgb(49, 49, 250);
+  color: rgb(49, 49, 250);
   font-weight: bolder;
 }
