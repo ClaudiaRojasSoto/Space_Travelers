@@ -1,7 +1,14 @@
 .header {
-  margin-top: 1rem;
+  margin: 1rem 4rem 2rem 4rem;
   display: flex;
-  justify-content: space-around;   
+  justify-content: space-between;
+  padding-bottom: 2rem; 
+  border-bottom: 1px solid;
+  
+}
+
+.header h1 {
+  font-size: 3rem;
 }
 
 img {
@@ -32,6 +39,7 @@ li:nth-child(2) {
 }
 
 a {
+  font-size: 1.5rem;
   text-decoration: none;
   color: rgb(40, 40, 252);
 }

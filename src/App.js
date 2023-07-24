@@ -14,7 +14,7 @@ function App() {
       <header className="header">
         <div>
           <img src={planet} alt="logo" />
-          <h2>Space Traveler&apos;s Hub</h2>
+          <h1>Space Traveler&apos;s Hub</h1>
         </div>
         <nav>
           <ul>
