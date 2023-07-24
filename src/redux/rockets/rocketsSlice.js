@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  rocketsData: [], // This will store the rockets data including id, name, type, flickr_images
+  rocketsData: [],
   loading: false,
   error: null,
 };
@@ -39,7 +39,6 @@ export const fetchRocketsData = () => (dispatch) => {
         name: rocket.rocket_name,
         type: rocket.rocket_type,
         flickr_images: rocket.flickr_images,
-        // You can add more fields according to your needs
       }));
 
       dispatch(setRocketsData(rocketsData));
