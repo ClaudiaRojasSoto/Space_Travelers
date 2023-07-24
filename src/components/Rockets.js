@@ -34,10 +34,6 @@ const Rockets = () => {
           <li key={rocket.id}>
             <h3>{rocket.rocket_name}</h3>
             <p>
-              Type:
-              {rocket.type}
-            </p>
-            <p>
               ID:
               {rocket.id}
             </p>
@@ -48,13 +44,7 @@ const Rockets = () => {
             {rocket.flickr_images && (
               <div>
                 <p>Images:</p>
-                <ul>
-                  {rocket.flickr_images.map((image) => (
-                    <li key={image}>
-                      <img src={image} alt="Rocket" />
-                    </li>
-                  ))}
-                </ul>
+                <img src={rocket.flickr_images[0]} alt={rocket.name} />
               </div>
             )}
           </li>
