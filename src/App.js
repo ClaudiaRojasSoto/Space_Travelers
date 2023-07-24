@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Route, Routes, NavLink,
+} from 'react-router-dom';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
@@ -29,9 +31,12 @@ function App() {
           </ul>
         </nav>
 
-        <Route exact path="/" component={Rockets} />
-        <Route exact path="/missions" component={Missions} />
-        <Route exact path="/my-profile" component={MyProfile} />
+        <Routes>
+          <Route exact path="/" element={<Rockets />} />
+          <Route exact path="/missions" element={<Missions />} />
+          <Route exact path="/my-profile" element={<MyProfile />} />
+        </Routes>
+
       </div>
     </Router>
   );
