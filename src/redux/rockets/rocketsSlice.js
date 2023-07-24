@@ -36,8 +36,8 @@ export const fetchRocketsData = () => (dispatch) => {
     .then((response) => {
       const rocketsData = response.data.map((rocket) => ({
         id: rocket.id,
-        name: rocket.rocket_name,
-        type: rocket.rocket_type,
+        rocket_name: rocket.rocket_name,
+        description: rocket.description,
         flickr_images: rocket.flickr_images,
       }));
 
