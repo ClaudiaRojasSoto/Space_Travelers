@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRocketsData } from '../redux/rockets/rocketsSlice';
+import { fetchRocketsData, reserveRocket, cancelRocket } from '../redux/rockets/rocketsSlice';
 import '../styles/Rockets.css';
 
 const Rockets = () => {
@@ -12,6 +12,14 @@ const Rockets = () => {
   useEffect(() => {
     dispatch(fetchRocketsData());
   }, [dispatch]);
+
+  const handleButtonClick = (rocket) => {
+    if (rocket.reserved) {
+      dispatch(cancelRocket(rocket.id));
+    } else {
+      dispatch(reserveRocket(rocket.id));
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -36,8 +44,10 @@ const Rockets = () => {
           )}
           <div className="rocket-details">
             <h3 className="rocket-details-name">{rocket.rocket_name}</h3>
-            <p className="rocket-details-description">{rocket.description}</p>
-            {/* Button reserve */}
+            <p className="rocket-details-description">{rocket.reserved ? `Reserved - ${rocket.description}` : rocket.description}</p>
+            <button type="button" onClick={() => handleButtonClick(rocket)} style={{ backgroundColor: rocket.reserved ? 'red' : 'green' }}>
+              {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+            </button>
           </div>
         </li>
       ))}
