@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRocketsData } from '../redux/rockets/rocketsSlice';
+import '../styles/Rockets.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -27,30 +28,20 @@ const Rockets = () => {
   }
 
   return (
-    <div>
-      <h2>Rockets</h2>
-      <ul>
-        {rocketsData.map((rocket) => (
-          <li key={rocket.id}>
-            <h3>{rocket.rocket_name}</h3>
-            <p>
-              ID:
-              {rocket.id}
-            </p>
-            <p>
-              Description:
-              {rocket.description}
-            </p>
-            {rocket.flickr_images && (
-              <div>
-                <p>Images:</p>
-                <img src={rocket.flickr_images[0]} alt={rocket.name} />
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="container rockets-container">
+      {rocketsData.map((rocket) => (
+        <li key={rocket.id} className="rocket-item">
+          {rocket.flickr_images && (
+            <img src={rocket.flickr_images[0]} alt={rocket.name} className="rocket-image" />
+          )}
+          <div className="rocket-details">
+            <h3 className="rocket-details-name">{rocket.rocket_name}</h3>
+            <p className="rocket-details-description">{rocket.description}</p>
+            {/* Button reserve */}
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 };
 
