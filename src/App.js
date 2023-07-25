@@ -21,17 +21,17 @@ function App() {
           </div>
           <nav>
             <ul>
-              <li>
+              <li className="nav-item">
                 <NavLink activeclassname="active" to="/">
                   Rockets
                 </NavLink>
               </li>
-              <li>
+              <li className="nav-item">
                 <NavLink activeclassname="active" to="/missions">
                   Missions
                 </NavLink>
               </li>
-              <li>
+              <li className="nav-item">
                 <NavLink activeclassname="active" to="/my-profile">
                   My Profile
                 </NavLink>
