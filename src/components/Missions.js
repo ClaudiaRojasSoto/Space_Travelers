@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import '../styles/Mission.css';
 
 function Missions({ name, description }) {
   return (
