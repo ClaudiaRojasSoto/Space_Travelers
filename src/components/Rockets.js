@@ -10,8 +10,10 @@ const Rockets = () => {
   const rocketsData = useSelector((state) => state.rockets.rocketsData);
 
   useEffect(() => {
-    dispatch(fetchRocketsData());
-  }, [dispatch]);
+    if (rocketsData.length === 0) {
+      dispatch(fetchRocketsData());
+    }
+  }, [dispatch, rocketsData]);
 
   const handleButtonClick = (rocket) => {
     if (rocket.reserved) {

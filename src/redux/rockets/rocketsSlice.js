@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import localforage from 'localforage';
 
 const initialState = {
   rocketsData: [],
@@ -32,6 +33,7 @@ const rocketsSlice = createSlice({
         }
         return rocket;
       });
+      localforage.setItem('rockets', state.rocketsData);
     },
     cancelRocket: (state, action) => {
       const id = action.payload;
@@ -41,27 +43,28 @@ const rocketsSlice = createSlice({
         }
         return rocket;
       });
+      localforage.setItem('rockets', state.rocketsData);
     },
   },
 });
 
-export const fetchRocketsData = () => (dispatch) => {
+export const fetchRocketsData = () => async (dispatch) => {
   dispatch(rocketsSlice.actions.setLoading());
-  axios
-    .get('https://api.spacexdata.com/v3/rockets')
-    .then((response) => {
-      const rocketsData = response.data.map((rocket) => ({
+  try {
+    let rocketsData = await localforage.getItem('rockets');
+    if (!rocketsData) {
+      const response = await axios.get('https://api.spacexdata.com/v3/rockets');
+      rocketsData = response.data.map((rocket) => ({
         id: rocket.id,
         rocket_name: rocket.rocket_name,
         description: rocket.description,
         flickr_images: rocket.flickr_images,
       }));
-
-      dispatch(rocketsSlice.actions.setRocketsData(rocketsData));
-    })
-    .catch((error) => {
-      dispatch(rocketsSlice.actions.setError(error.message));
-    });
+    }
+    dispatch(rocketsSlice.actions.setRocketsData(rocketsData));
+  } catch (error) {
+    dispatch(rocketsSlice.actions.setError(error.message));
+  }
 };
 
 export const {
