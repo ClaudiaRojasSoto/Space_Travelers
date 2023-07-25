@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import '../styles/Mission.css';
 
-function Missions({ name, description, id }) {
+function Missions({ name, description }) {
   return (
-    <tr>
+    <tr className="missionRow">
       <td>{name}</td>
-      <td style={{ width: '55rem' }}>{description}</td>
-      <td>{id}</td>
+      <td>{description}</td>
+      <td>Status</td>
     </tr>
   );
 }
@@ -13,7 +14,6 @@ function Missions({ name, description, id }) {
 Missions.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
 };
 
 export default Missions;
