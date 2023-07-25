@@ -1,9 +1,19 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
-const Missions = () => (
-  <div>
-    <h3>Missions</h3>
-  </div>
-);
+function Missions({ name, description, id }) {
+  return (
+    <tr>
+      <td>{name}</td>
+      <td style={{ width: '55rem' }}>{description}</td>
+      <td>{id}</td>
+    </tr>
+  );
+}
+
+Missions.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default Missions;

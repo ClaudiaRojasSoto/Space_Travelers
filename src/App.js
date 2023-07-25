@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router, Route, Routes, NavLink,
 } from 'react-router-dom';
 import Rockets from './components/Rockets';
-import Missions from './components/Missions';
+import MissionsList from './components/MissionsList';
 import MyProfile from './components/MyProfile';
 import './styles/App.css';
 import planet from './images/planet.png';
@@ -41,7 +41,7 @@ function App() {
         </header>
         <Routes>
           <Route exact path="/" element={<Rockets />} />
-          <Route exact path="/missions" element={<Missions />} />
+          <Route exact path="/missions" element={<MissionsList />} />
           <Route exact path="/my-profile" element={<MyProfile />} />
         </Routes>
       </Router>
