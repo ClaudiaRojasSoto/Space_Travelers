@@ -14,6 +14,11 @@ export const setError = (error) => ({
   payload: error,
 });
 
+export const reserveRocket = (rocketId) => ({
+  type: 'RESERVE_ROCKET',
+  payload: rocketId,
+});
+
 export const fetchRocketsData = () => (dispatch) => {
   dispatch(setLoading());
 
