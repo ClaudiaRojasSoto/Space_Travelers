@@ -5,13 +5,18 @@
   width: 80%;
 }
 
-th, td {
+th,
+td {
   padding: 0.3rem;
-  border: 1px solid #E4E9EB;;
+  border: 1px solid #e4e9eb;
 }
 
 th {
   text-align: left;
+}
+
+tr {
+  margin: 0.4rem;
 }
 
 td:nth-child(1) {
@@ -25,9 +30,5 @@ td:nth-child(2) {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #F2F3F3;
-}
-
-tr {
-  margin: 0.4rem;
+  background-color: #f2f3f3;
 }
