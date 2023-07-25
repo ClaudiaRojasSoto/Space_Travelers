@@ -44,8 +44,32 @@ const Rockets = () => {
           )}
           <div className="rocket-details">
             <h3 className="rocket-details-name">{rocket.rocket_name}</h3>
-            <p className="rocket-details-description">{rocket.reserved ? `Reserved - ${rocket.description}` : rocket.description}</p>
-            <button type="button" onClick={() => handleButtonClick(rocket)} style={{ backgroundColor: rocket.reserved ? 'red' : 'green' }}>
+            <p className="rocket-details-description">
+              {rocket.reserved ? (
+                <span style={{
+                  backgroundColor: '#19a2b9', color: 'white', padding: '5px 5px', borderRadius: '5px', fontSize: '20px',
+                }}
+                >
+                  Reserved
+                </span>
+              ) : null}
+              {' '}
+              {rocket.description}
+            </p>
+            <button
+              type="button"
+              onClick={() => handleButtonClick(rocket)}
+              style={{
+                backgroundColor: rocket.reserved ? 'white' : '#027bff',
+                fontSize: rocket.reserved ? '18px' : '18px',
+                color: rocket.reserved ? '#333333' : 'white',
+                width: rocket.reserved ? '200px' : '180px',
+                height: rocket.reserved ? '50px' : '50px',
+                padding: '10px',
+                borderRadius: '5px',
+                border: rocket.reserved ? '2px solid grey' : 'none',
+              }}
+            >
               {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
             </button>
           </div>
