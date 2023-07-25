@@ -24,13 +24,29 @@ const rocketsSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    reserveRocket: (state, action) => {
+      const id = action.payload;
+      state.rocketsData = state.rocketsData.map((rocket) => {
+        if (rocket.id === id) {
+          return { ...rocket, reserved: true };
+        }
+        return rocket;
+      });
+    },
+    cancelRocket: (state, action) => {
+      const id = action.payload;
+      state.rocketsData = state.rocketsData.map((rocket) => {
+        if (rocket.id === id) {
+          return { ...rocket, reserved: false };
+        }
+        return rocket;
+      });
+    },
   },
 });
 
-export const { setRocketsData, setLoading, setError } = rocketsSlice.actions;
-
 export const fetchRocketsData = () => (dispatch) => {
-  dispatch(setLoading());
+  dispatch(rocketsSlice.actions.setLoading());
   axios
     .get('https://api.spacexdata.com/v3/rockets')
     .then((response) => {
@@ -41,11 +57,15 @@ export const fetchRocketsData = () => (dispatch) => {
         flickr_images: rocket.flickr_images,
       }));
 
-      dispatch(setRocketsData(rocketsData));
+      dispatch(rocketsSlice.actions.setRocketsData(rocketsData));
     })
     .catch((error) => {
-      dispatch(setError(error.message));
+      dispatch(rocketsSlice.actions.setError(error.message));
     });
 };
+
+export const {
+  setRocketsData, setLoading, setError, reserveRocket, cancelRocket,
+} = rocketsSlice.actions;
 
 export default rocketsSlice.reducer;
