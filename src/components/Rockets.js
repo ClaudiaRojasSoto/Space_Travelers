@@ -63,10 +63,10 @@ const Rockets = () => {
               onClick={() => handleButtonClick(rocket)}
               style={{
                 backgroundColor: rocket.reserved ? 'white' : '#027bff',
-                fontSize: rocket.reserved ? '18px' : '18px',
+                fontSize: '18px',
                 color: rocket.reserved ? '#333333' : 'white',
                 width: rocket.reserved ? '200px' : '180px',
-                height: rocket.reserved ? '50px' : '50px',
+                height: '50px',
                 padding: '10px',
                 borderRadius: '5px',
                 border: rocket.reserved ? '2px solid grey' : 'none',
