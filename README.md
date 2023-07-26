@@ -76,9 +76,9 @@ The space-travelers-capstone is a Web application for a company that provides co
 
 
 [SpaceTravelers.webm](https://github.com/ClaudiaRojasSoto/Space_Travelers/assets/111262493/c6a3917d-a45b-4818-9d94-191a8192c06c)
-## 🚀 Live Demo <a name="live-demo"> https://space-travelers-z8vp.onrender.com</a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-> You can see the live demo of this project 
+> You can see the live demo of this project: [click here](https://space-travelers-z8vp.onrender.com)
 
 
 
