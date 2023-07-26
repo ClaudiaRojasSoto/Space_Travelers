@@ -1,0 +1,30 @@
+.status {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 0 1rem;
+}
+
+.leaveBtn {
+  color: red;
+  border: 1px solid red;
+  min-width: 135px;
+}
+
+.joinBtn {
+  color: #6c757c;
+  border: 1px solid #6c757c;
+  min-width: 135px;
+}
+
+.notActive {
+  min-width: 135px;
+  color: #fff;
+  background-color: #6c757c;
+  border-radius: 0.5rem;
+}
+
+.activeMember {
+  min-width: 145px;
+  color: #fff;
+  background-color: #18a3b9;
+}
