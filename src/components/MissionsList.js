@@ -1,6 +1,5 @@
-import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Missions from './Missions';
 import { fetchMissions } from '../redux/missions/missionsSlice';
 import '../styles/MissionsList.css';
@@ -8,6 +7,7 @@ import '../styles/MissionsList.css';
 function MissionsList() {
   const { missions } = useSelector((state) => state.missions);
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (missions.length === 0) dispatch(fetchMissions());
   }, [missions.length, dispatch]);
