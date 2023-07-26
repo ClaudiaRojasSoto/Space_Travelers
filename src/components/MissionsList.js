@@ -9,9 +9,9 @@ function MissionsList() {
   const { missions } = useSelector((state) => state.missions);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchMissions());
+    if (missions.length === 0) dispatch(fetchMissions());
   }, []);
-  console.log(missions);
+
   return (
     <table className="table">
       <thead className="tableHeader">
@@ -25,8 +25,10 @@ function MissionsList() {
         {missions.map((mission) => (
           <Missions
             key={mission.mission_id}
+            id={mission.mission_id}
             name={mission.mission_name}
             description={mission.description}
+            activeMember={mission.activeMember || false}
           />
         ))}
       </tbody>
