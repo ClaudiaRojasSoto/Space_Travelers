@@ -31,7 +31,7 @@
 
 # 📖 Space Traveler's Hub<a name="about-project"></a>
 
-The space-travelers-capstone is an Web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+The space-travelers-capstone is a Web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -71,6 +71,14 @@ The space-travelers-capstone is an Web application for a company that provides c
 - **Following best practices for HTML, CSS, JS**
 
 <!-- LIVE DEMO -->
+
+
+
+
+[SpaceTravelers.webm](https://github.com/ClaudiaRojasSoto/Space_Travelers/assets/111262493/c6a3917d-a45b-4818-9d94-191a8192c06c)
+## 🚀 Live Demo <a name="live-demo"> https://space-travelers-z8vp.onrender.com</a>
+
+> You can see the live demo of this project 
 
 
 
@@ -147,9 +155,7 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Add Rocket section**
-- **Add Missions section**
-- **Add styles**
+- Add dragons Section
 
 ## Walkthrough <a name="walkthrough"></a>
 
