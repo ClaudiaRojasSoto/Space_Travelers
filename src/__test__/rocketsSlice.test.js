@@ -1,4 +1,6 @@
-import rocketsReducer, { setRocketsData, setLoading, setError, reserveRocket, cancelRocket } from '../redux/rockets/rocketsSlice';
+import rocketsReducer, {
+  setRocketsData, setLoading, setError, reserveRocket, cancelRocket,
+} from '../redux/rockets/rocketsSlice';
 
 describe('rockets reducer', () => {
   let state = null;
@@ -13,8 +15,12 @@ describe('rockets reducer', () => {
 
   it('should handle setRocketsData', () => {
     const mockData = [
-      { id: 1, rocket_name: 'Rocket Name 1', description: 'Description 1', flickr_images: ['image1_1', 'image1_2'], reserved: false },
-      { id: 2, rocket_name: 'Rocket Name 2', description: 'Description 2', flickr_images: ['image2_1', 'image2_2'], reserved: false },
+      {
+        id: 1, rocket_name: 'Rocket Name 1', description: 'Description 1', flickr_images: ['image1_1', 'image1_2'], reserved: false,
+      },
+      {
+        id: 2, rocket_name: 'Rocket Name 2', description: 'Description 2', flickr_images: ['image2_1', 'image2_2'], reserved: false,
+      },
     ];
 
     state = rocketsReducer(state, setRocketsData(mockData));
@@ -39,7 +45,9 @@ describe('rockets reducer', () => {
 
   it('should handle reserveRocket', () => {
     const initialState = {
-      rocketsData: [{ id: 1, rocket_name: 'Rocket Name 1', description: 'Description 1', flickr_images: ['image1_1', 'image1_2'], reserved: false }],
+      rocketsData: [{
+        id: 1, rocket_name: 'Rocket Name 1', description: 'Description 1', flickr_images: ['image1_1', 'image1_2'], reserved: false,
+      }],
       loading: false,
       error: null,
     };
@@ -50,7 +58,9 @@ describe('rockets reducer', () => {
 
   it('should handle cancelRocket', () => {
     const initialState = {
-      rocketsData: [{ id: 1, rocket_name: 'Rocket Name 1', description: 'Description 1', flickr_images: ['image1_1', 'image1_2'], reserved: true }],
+      rocketsData: [{
+        id: 1, rocket_name: 'Rocket Name 1', description: 'Description 1', flickr_images: ['image1_1', 'image1_2'], reserved: true,
+      }],
       loading: false,
       error: null,
     };

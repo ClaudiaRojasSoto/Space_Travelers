@@ -1,9 +1,10 @@
 import * as rocketsActions from '../redux/rockets/rocketsActions';
 
-
 describe('rocketsActions', () => {
   it('should create an action to set rockets data', () => {
-    const mockData = [{ id: 1, name: 'Rocket Name 1', type: 'Rocket Type 1', flickr_images: ['image1_1', 'image1_2'], reserved: false }];
+    const mockData = [{
+      id: 1, name: 'Rocket Name 1', type: 'Rocket Type 1', flickr_images: ['image1_1', 'image1_2'], reserved: false,
+    }];
     const expectedAction = {
       type: 'SET_ROCKETS_DATA',
       payload: mockData,

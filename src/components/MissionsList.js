@@ -10,7 +10,7 @@ function MissionsList() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (missions.length === 0) dispatch(fetchMissions());
-  }, []);
+  }, [missions.length, dispatch]);
 
   return (
     <table className="table">

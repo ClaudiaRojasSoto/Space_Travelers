@@ -57,8 +57,8 @@ describe('Rockets', () => {
       </Provider>,
     );
 
-    const firstRocketImage = document.querySelector(`img[src="http://example.com/image1.jpg"]`);
-    const secondRocketImage = document.querySelector(`img[src="http://example.com/image2.jpg"]`);
+    const firstRocketImage = document.querySelector('img[src="http://example.com/image1.jpg"]');
+    const secondRocketImage = document.querySelector('img[src="http://example.com/image2.jpg"]');
 
     expect(firstRocketImage).toBeInTheDocument();
     expect(secondRocketImage).toBeInTheDocument();
